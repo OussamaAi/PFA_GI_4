@@ -61,6 +61,7 @@ namespace PFA.Controllers
 
 			var hotel =hotels.Select(h=>new ListerHotelModelView { 
 
+					Id=h.Id,
 					Image=h.Image,
 					NbrEtoile=h.NbrEtoile,
 					NbrCHambre=h.NbrCHambre,
@@ -77,6 +78,7 @@ namespace PFA.Controllers
 			List<Restaurant> restaurants = db.Restaurants.ToList();
 			var restaurant = restaurants.Select(r => new ListerRestaurantModelView
 			{
+				Id=r.Id,
 				NomEndroit=r.NomEndroit,
 				Image = r.Image,
                 TypeCuisine=r.TypeCuisine,
@@ -94,6 +96,7 @@ namespace PFA.Controllers
             List<LieuTouristique> lieuTouristique =  db.LieuTouristiques.ToList();
             var lieu = lieuTouristique.Select(r => new ListerLieuTouristiqueModelView
             {
+				Id=r.Id,
                 NomEndroit = r.NomEndroit,
                 Image = r.Image,
                  

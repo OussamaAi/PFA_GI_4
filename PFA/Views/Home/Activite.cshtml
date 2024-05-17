@@ -41,16 +41,19 @@
                             }
                         </div>
                         <ul class="list-group list-group-flush">
+
                             <li class="list-group-item">
-                                <i class="fas fa-map-marker-alt"></i> @item.Addresse
+
+                                @if (!string.IsNullOrEmpty(item.Addresse))
+                                {
+                                    <i class="fas fa-map-marker-alt"></i> @item.Addresse
+                                }
+ 
                             </li>
                         </ul>
                     </div>
                     <div class="card-footer">
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-primary" })
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-info" })
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-danger" })
-                    </div>
+                     </div>
                 </div>
             </div>
         }

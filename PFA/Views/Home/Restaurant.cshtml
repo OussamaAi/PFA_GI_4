@@ -10,7 +10,7 @@
         @foreach (var item in Model)
         {
             <div class="col-md-4 mb-4">
-                <div class="card h-100">
+                <div class="card h-60">
                     <img src="~/EndroitImage/Restaurant/@item.Image" class="card-img-top" alt="Restaurant Photo">
                     <div class="card-body">
                         <h5 class="card-title">@item.NomEndroit</h5>
@@ -47,7 +47,7 @@
                     </ul>
                     <div class="card-body text-center">
                         <a href="#" class="btn btn-primary">Voir les détails</a>
-                        <a href="@Url.Action("Reserver", "Restaurant", new { id = item.Id })" class="btn btn-success">Réserver</a>
+                        <a href="@Url.Action("Reserver", "Restaurant", new { id = item.Id })" asp-route-id="@item.Id" class="btn btn-success">Réserver</a>
                     </div>
                 </div>
             </div>
