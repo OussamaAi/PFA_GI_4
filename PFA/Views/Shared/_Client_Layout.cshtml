@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- site icon -->
+    <link rel="icon" href="images/fevicon.png" type="image/png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/Client/css/bootstrap.min.css" />
+    <!-- site css -->
+    <link rel="stylesheet" href="~/Client/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/Client/css/responsive.css" />
+    <!-- color css -->
+    <link rel="stylesheet" href="~/Client/css/colors.css" />
+    <!-- select bootstrap -->
+    <link rel="stylesheet" href="~/Client/css/bootstrap-select.css" />
+    <!-- scrollbar css -->
+    <link rel="stylesheet" href="~/Client/css/perfect-scrollbar.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="~/Client/css/custom.css" />
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <link href="~/Client/assets/img/favicon.png" rel="icon">
+    <link href="~/Client/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Client/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Client/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Client/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/Client/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="~/Client/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="~/Client/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/Client/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/Client/assets/css/style.css" rel="stylesheet">
+
+</head>
+<body class="dashboard dashboard_1">
+    <div class="full_container">
+        <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+                <div class="sidebar_blog_1">
+                    <div class="sidebar-header">
+                        <div class="logo_section">       
+                            <a href="dashboard.html"><img class="logo_icon img-responsive" src="~/ProfilImage/profile-img.jpg" alt="#" /></a>                           
+                        </div>
+                    </div>
+                    <div class="sidebar_user_info">
+                        <div class="icon_setting"></div>
+                        <div class="user_profle_side">
+
+
+                            @if (Model != null && !string.IsNullOrEmpty(Model.PhotoPath))
+                            {
+                                      <div class="user_img">
+                                   <img class="img-responsive" src="~/ProfilImage/@Model.PhotoPath" alt="Profile" class="rounded-circle">
+                                            </div>
+                            }
+                            else
+                            {
+                                 <div class="user_img"><img class="img-responsive" src="~/Client/images/layout_img/user_img.jpg" alt="#" /></div>
+
+
+                            }
+                                
+                               @*  <div class="user_img"><img class="img-responsive" src="~/Client/images/layout_img/user_img.jpg" alt="#" /></div>
+ *@
+                           
+                            <div class="user_info">
+                                <h6>@Context.Session.GetString("Nom") @Context.Session.GetString("Prenom")</h6>
+                                <p><span class="online_animation"></span> Online</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar_blog_2">
+                    <h4>General</h4>
+                    <ul class="list-unstyled components">
+                        <li class="active">
+                            <a href="dashboard.html"><i class="fa fa-dashboard yellow_color"></i> <span>Espace Client</span></a>
+                        </li>
+
+                        <li>
+                            <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Reservations</span></a>
+                            <ul class="collapse list-unstyled" id="element">
+                                <li><a asp-action="Index" asp-controller="Tables">> <span>Tables</span></a></li>
+                                <li><a asp-action="Index" asp-controller="Chambres">> <span>Chambres</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li><a href="map.html"><i class="fa fa-map purple_color2"></i> <span>Plan</span></a></li>
+                        <li class="active">
+                            <a href="#additional_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Endroit</span></a>
+                            <ul class="collapse list-unstyled" id="additional_page">
+                                <li>
+                                    <a href="DemanderPlan.html">> <span>Demander Plan</span></a>
+                                </li>
+                                <li>
+                                    <a href="project.html">> <span>Proposer itiniraire</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="charts.html"><i class="fa fa-bar-chart-o green_color"></i> <span>Statistiques</span></a></li>
+                        <li><a asp-action="Index" asp-controller="Paiments"><i class="fa fa-table purple_color2"></i> <span>Facturation</span></a></li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Avis"><i class="fa fa-comment"></i> <span>Avis </span></a>
+                        </li>
+                        <li>
+                            <a asp-action="Index" asp-controller="Contacts">
+                                <i class="fa fa-paper-plane red_color"></i> <span>Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+                <!-- topbar -->
+                <div class="topbar">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="full">
+                            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                            <div class="logo_section">
+                                <a href="index.html"><img class="logo_icon img-responsive" src="images/logo/transparente.png" alt="#" /></a>
+                            </div>
+                            <div class="right_topbar">
+                                <div class="icon_info">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                                        <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                                    </ul>
+                                    <ul class="user_profile_dd">
+                                        <li>
+                                            @* @if (Context.Session.GetString("Photo")=="")
+                                            { *@
+                                           @*   }
+                                           @*  else
+                                            { 
+                                            <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="~/ProfilImage/profile-img.jpg" alt="#" /><span class="name_user"> @Context.Session.GetString("Nom") @Context.Session.GetString("Prenom")</span></a>
+
+                                             }  *@
+                                           @*  @if (Model.PhotoPath=="")
+                                            {
+                                                <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="~/ProfilImage/profile-img.jpg" alt="#" /><span class="name_user"> @Context.Session.GetString("Nom") @Context.Session.GetString("Prenom")  </span></a>
+
+                                            }
+                                            else
+                                            {
+                                                <a class="dropdown-toggle" data-toggle="dropdown">
+                                                    <img src="@Url.Content("~/ProfilImage/" + Model.PhotoPath)" alt="Profile" class="rounded-circle">
+
+                                                    <span class="name_user"> @Context.Session.GetString("Nom") @Context.Session.GetString("Prenom")  </span></a>
+
+                                            }
+ *@
+                                            @if (Model != null && !string.IsNullOrEmpty(Model.PhotoPath))
+                                            {
+                                                <a class="dropdown-toggle" data-toggle="dropdown">
+                                                    <img src="@Url.Content("~/ProfilImage/" + Model.PhotoPath)" alt="Profile" class="img-responsive rounded-circle" />
+                                                    <span class="name_user"> @Context.Session.GetString("Nom") @Context.Session.GetString("Prenom") </span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <a class="dropdown-toggle" data-toggle="dropdown">
+                                                    <img class="img-responsive rounded-circle" src="~/ProfilImage/profile-img.jpg" alt="#" />
+                                                    <span class="name_user"> @Context.Session.GetString("Nom") @Context.Session.GetString("Prenom") </span>
+                                                </a>
+                                            }
+                                            
+
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" asp-controller="Client" asp-action="ModifierProfil" >Mon Profile</a>
+                                                <a class="dropdown-item" asp-controller="User" asp-action="LogOut"><span>Se déconnecter</span> <i class="fa fa-sign-out"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- end topbar -->
+                <!-- dashboard inner -->
+                <div class="midde_cont">
+                    <div class="container-fluid">
+                    </div>
+                </div>
+                <!-- end dashboard inner -->
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/Client/js/jquery.min.js"></script>
+    <script src="~/Client/js/popper.min.js"></script>
+    <script src="~/Client/js/bootstrap.min.js"></script>
+    <!-- wow animation -->
+    <script src="~/Client/js/animate.js"></script>
+    <!-- select country -->
+    <script src="~/Client/js/bootstrap-select.js"></script>
+    <!-- owl carousel -->
+    <script src="~/Client/js/owl.carousel.js"></script>
+    <!-- chart js -->
+    <script src="~/Client/js/Chart.min.js"></script>
+    <script src="~/Client/js/Chart.bundle.min.js"></script>
+    <script src="~/Client/js/utils.js"></script>
+    <script src="~/Client/js/analyser.js"></script>
+    <!-- nice scrollbar -->
+    <script src="~/Client/js/perfect-scrollbar.min.js"></script>
+    <script>
+        var ps = new PerfectScrollbar('#sidebar');
+    </script>
+    <!-- custom js -->
+    <script src="~/Client/js/custom.js"></script>
+    <script src="~/Client/js/chart_custom_style1.js"></script>
+ 
+
+
+
+    <!--Modifier Profil-->
+    <!-- Vendor JS Files -->
+    <script src="~/Client/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/Client/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Client/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="~/Client/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="~/Client/assets/vendor/quill/quill.min.js"></script>
+    <script src="~/Client/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="~/Client/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/Client/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+</body>
+</html>

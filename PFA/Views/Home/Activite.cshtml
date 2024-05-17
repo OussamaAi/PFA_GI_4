@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PFA.ModelView.ListerLieuTouristiqueModelView>
+
+@{
+    ViewData["Title"] = "Activite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Activite</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="~/EndroitImage/Activite/@item.Image" class="card-img-top" alt="Activite Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.NomEndroit</h5>
+                        <div>
+                            @{
+                                int fullStars = (int)item.NbrEtoile;
+                                bool hasHalfStar = (item.NbrEtoile - fullStars) >= 0.5;
+                            }
+
+                            @for (int i = 0; i < fullStars; i++)
+                            {
+                                <i class="fas fa-star text-warning"></i>
+                            }
+
+                            @if (hasHalfStar)
+                            {
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            }
+
+                            @for (int i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++)
+                            {
+                                <i class="far fa-star text-warning"></i>
+                            }
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <i class="fas fa-map-marker-alt"></i> @item.Addresse
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
