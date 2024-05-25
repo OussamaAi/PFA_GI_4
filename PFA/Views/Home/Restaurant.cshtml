@@ -6,6 +6,22 @@
 }
 
 <div class="container mt-5">
+    <h1>@ViewData["Title"]</h1>
+
+    <form id="filterForm" method="get" action="@Url.Action("RestaurantTest", "Home")" class="mb-5">
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="filter" id="mieuxNotes" value="mieuxNotes">
+                <label class="form-check-label" for="mieuxNotes">
+                    Mieux notés (4-5 étoiles)
+                </label>
+            </div>
+        </div>
+
+        <button id="filtrerbtn" type="submit" class="btn btn-primary">Filtrer</button>
+    </form>
+
+
     <div class="row">
         @foreach (var item in Model)
         {
@@ -46,11 +62,39 @@
                         </li>
                     </ul>
                     <div class="card-body text-center">
-                        <a href="#" class="btn btn-primary">Voir les détails</a>
-                        <a href="@Url.Action("Reserver", "Restaurant", new { id = item.Id })" asp-route-id="@item.Id" class="btn btn-success">Réserver</a>
+                        <a href="@Url.Action("Reserver", "Restaurant", new { id = item.Id })" class="btn btn-primary">Réserver</a>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="@Url.Action("Details", "Restaurant", new { id = item.Id })" class="btn btn-secondary">Details</a>
                     </div>
                 </div>
             </div>
         }
     </div>
 </div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#filterForm').submit(function (e) {
+            e.preventDefault(); // Empêche le comportement par défaut du formulaire
+
+            // Envoie une requête AJAX pour récupérer les restaurants filtrés
+            $.ajax({
+                url: $(this).attr('RestaurantTest'),
+                type: 'GET',
+                data: $(this).serialize(), // Sérialise les données du formulaire
+                success: function (data) {
+                    // Met à jour la section des restaurants avec les nouvelles données
+                    $('.row').html($(data).find('.row').html());
+                },
+                error: function (xhr, status, error) {
+                    console.error(status, error); // Gestion des erreurs
+                }
+            });
+        });
+    });
+</script>

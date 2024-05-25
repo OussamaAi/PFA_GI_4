@@ -1,0 +1,60 @@
+﻿@model PFA.ModelView.ListerActivieViewModelcs
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div style=" width: 100%; height: 200px; overflow: hidden;">
+                    <img src="~/EndroitImage/Activite/@Model.Image" class="card-img-top" alt="Hotel Photo" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@Model.NomEndroit</h5>
+                    <div>
+                        <strong>Nombre d'Étoiles :</strong>
+                        <div>
+                            @{
+                                int fullStars = (int)Model.NbrEtoile;
+                                bool hasHalfStar = (Model.NbrEtoile - fullStars) >= 0.5;
+                            }
+
+                            @for (int i = 0; i < fullStars; i++)
+                            {
+                                <i class="fas fa-star text-warning"></i>
+                            }
+
+                            @if (hasHalfStar)
+                            {
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            }
+
+                            @for (int i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++)
+                            {
+                                <i class="far fa-star text-warning"></i>
+                            }
+                        </div>
+                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <i class="fas fa-map-marker-alt"></i> @Model.Addresse
+                        </li>
+                        <li class="list-group-item">
+                          
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@*     <div class="card-body text-center">
+        <a href="@Url.Action("Reserver", "Hotel", new { id = Model.Id })" class="btn btn-primary">Reserver</a>
+    </div> *@
+</div>
+
+

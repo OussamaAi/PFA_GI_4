@@ -8,10 +8,12 @@ namespace PFA.Controllers
 {
     public class UserController : Controller
     {
+        
+
         MyContext db;
         public UserController(MyContext db)
         {
-            this.db = db;
+            this.db = db; 
         }
 
         public IActionResult Index()
@@ -70,8 +72,8 @@ namespace PFA.Controllers
                 User u = db.Users.Where(u => u.Login == mv.Login && u.Password == mv.Password).FirstOrDefault();
                 
                 if (u != null)
-                { 
-
+                {
+                    HttpContext.Session.SetString("Id", u.Id.ToString());
                     HttpContext.Session.SetString("Nom", u.Nom);
                     HttpContext.Session.SetString("Prenom", u.Prenom);
                     HttpContext.Session.SetString("Email", u.Email);
@@ -80,7 +82,7 @@ namespace PFA.Controllers
                     HttpContext.Session.SetString("Role", u.Role);
                     if (u.Role == "Client")
                     {
-                        return RedirectToAction("Index", "Client");
+                        return RedirectToAction("AfficherStatistique", "Client");
                     }
                     else
                     {

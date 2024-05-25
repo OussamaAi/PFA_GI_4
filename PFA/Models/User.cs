@@ -1,5 +1,6 @@
 ﻿using AuthSystem.Models;
 using PFA.ModelView;
+using System.Text.Json.Serialization;
 
 namespace PFA.Models
 {
@@ -20,7 +21,8 @@ namespace PFA.Models
         public IList<Avis>? Avis { get; set; }
         public IList<Reservation>? Reservations { get; set; }
         public IList<Contact>? Contacts { get; set; }
-
+        [JsonIgnore]
+        public ICollection<Visit>? Visits { get; set; }
 
 
         public User() { }

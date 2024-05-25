@@ -11,7 +11,9 @@
         {
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
-                    <img src="~/EndroitImage/Hotel/@item.Image" class="card-img-top" alt="Hotel Photo">
+                    <div style="width: 100%; height: 200px; overflow: hidden;">
+                        <img src="~/EndroitImage/Hotel/@item.Image" class="card-img-top" alt="Hotel Photo" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">@item.NomEndroit</h5>
                         <div>
@@ -35,16 +37,19 @@
                                 <i class="far fa-star text-warning"></i>
                             }
                         </div>
-                         
+                        <p class="card-text"><strong>Nombre de Chambres :</strong> @item.NbrCHambre</p>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <i class="fas fa-map-marker-alt"></i> @item.Addresse
                         </li>
-                        
+                        <li class="list-group-item">
+                            <i class="fas fa-city"></i> @item.ville?.Nom
+                        </li>
                     </ul>
                     <div class="card-footer bg-transparent border-top-0 text-center">
-                        <a href="@Url.Action("Reserver", "Hotel", new { id = item.Id })" class="btn btn-primary">Réserver</a>
+                        <a href="@Url.Action("Reserver", "Hotel", new { id = item.Id })"   class="btn btn-primary">Réserver</a>
+                        <a href="@Url.Action("Details", "Hotel", new { id = item.Id })"   class="btn btn-secondary">Détails</a>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ namespace AuthSystem.Models
         public string Etat { get; set; }
 
         public User user { get; set; }
-        public int ClientId { get; set; }
+        public int UserId { get; set; }
 
 
         public IList<Paiment> paiments { get; set; }
@@ -17,5 +17,6 @@ namespace AuthSystem.Models
         public IList<Chambre> chambres { get; set; }
 
         public IList<Table> tables { get; set; }
+
     }
 }

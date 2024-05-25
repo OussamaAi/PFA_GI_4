@@ -1,4 +1,6 @@
-﻿namespace AuthSystem.Models
+﻿using AuthSystem.Models;
+
+namespace PFA.Models
 {
     public class Chambre
     {
@@ -8,10 +10,12 @@
         public int Prix { get; set; }
         public bool Disponibilité { get; set; }
 
-        public Hotel? hotel { get; set; }
+        public Hotel hotel { get; set; }
         public int HotelId { get; set; }
 
         public Reservation? reservation { get; set; }
-        public int ReservationId { get; set; }
+        public int? ReservationId { get; set; }
     }
+
 }
+

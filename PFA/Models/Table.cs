@@ -8,6 +8,9 @@
         public bool libre { get; set; }
 
         public Reservation? Reservation { get; set; }
-        public int ReservationId { get; set; }
+        public int? ReservationId { get; set; }
+
+        public Restaurant Restaurant { get; set; }
+        public int RestaurantId { get; set; }
     }
 }

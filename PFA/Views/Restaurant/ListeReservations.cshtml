@@ -1,0 +1,102 @@
+﻿@model PFA.ModelView.ListerTablesReserveViewModel
+
+@{
+    ViewData["Title"] = "Liste des réservations";
+    Layout = "~/Views/Shared/_Client_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2>Liste des réservations</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>État</th>
+                <th>Tables réservées</th>
+                <th>Restaurant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model.reservations)
+            {
+                <tr>
+                    <td>@reservation.Date</td>
+                    <td>@reservation.Etat</td>
+                    <td>
+                        @foreach (var table in reservation.tables)
+                        {
+                            <span>@table.Numéro</span>
+                        }
+                    </td>
+                    <td>@reservation.tables.FirstOrDefault()?.Restaurant.NomEndroit</td>
+                    <td>
+                        <a asp-controller="Restaurant" asp-action="EditerReservation" asp-route-id="@reservation.Id" class="btn btn-warning">Modifier</a>
+                        <form asp-action="SupprimerReservation" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@reservation.Id" />
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+@* @model PFA.ModelView.ListerTablesReserveViewModel
+
+@{
+    ViewData["Title"] = "Liste des réservations";
+    Layout = "~/Views/Shared/_Client_Layout.cshtml";
+}
+
+<div class="container mt-5" style="margin-left:2%;">
+    <h2>Liste des réservations</h2>
+    <table class="table " >
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>État</th>
+                <th>Tables réservées</th>
+                <th>Restaurant</th> <!-- Nouvelle colonne pour afficher le restaurant -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model.reservations)
+            {
+                <tr>
+                    <td>@reservation.Date</td>
+                    <td>@reservation.Etat</td>
+                    <td>
+                        @foreach (var table in reservation.tables)
+                        {
+                            <span>@table.Numéro</span>
+                        }
+                    </td>
+                    <td>@reservation.tables.FirstOrDefault()?.Restaurant.NomEndroit</td> <!-- Afficher le nom du restaurant associé à la première table réservée -->
+                    <td>
+                        <div class="card-body text-center">
+
+                            <a href="@Url.Action("EditerReservation", "Restaurant", new { id = reservation.Id })" class="btn btn-success">Modifier</a>
+                        
+                        
+
+                            <a href="@Url.Action("Supprimer", "Restaurant", new { id = reservation.Id })" class="btn btn-danger">Supprimer</a>
+                        </div>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+ *@

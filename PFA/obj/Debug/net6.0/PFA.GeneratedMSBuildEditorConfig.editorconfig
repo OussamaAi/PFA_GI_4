@@ -16,8 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projet .NET 4eme annee\PFA\PFA
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Activite/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpdGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projet .NET 4eme annee/PFA/PFA/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Client/AfficherStatistique.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEFmZmljaGVyU3RhdGlzdGlxdWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Client/DemanderPlan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XERlbWFuZGVyUGxhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projet .NET 4eme annee/PFA/PFA/Views/Client/Index.cshtml]
@@ -48,6 +60,54 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXN0YXVyYW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Home/RestaurantTest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXN0YXVyYW50VGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Hotel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Hotel/EditerReservation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcRWRpdGVyUmVzZXJ2YXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Hotel/ListeReservations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcTGlzdGVSZXNlcnZhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Hotel/Reserver.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcUmVzZXJ2ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Hotel/TrackVisit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG90ZWxcVHJhY2tWaXNpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Paiment/Confirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpbWVudFxDb25maXJtYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Paiment/Payer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFpbWVudFxQYXllci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Restaurant/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Restaurant/EditerReservation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxFZGl0ZXJSZXNlcnZhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Restaurant/ListeReservations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxMaXN0ZVJlc2VydmF0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projet .NET 4eme annee/PFA/PFA/Views/Restaurant/Reserver.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzdGF1cmFudFxSZXNlcnZlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projet .NET 4eme annee/PFA/PFA/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -66,10 +126,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Projet .NET 4eme annee/PFA/PFA/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Projet .NET 4eme annee/PFA/PFA/Views/TemplatePrincipale/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcGxhdGVQcmluY2lwYWxlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projet .NET 4eme annee/PFA/PFA/Views/User/Inscription.cshtml]

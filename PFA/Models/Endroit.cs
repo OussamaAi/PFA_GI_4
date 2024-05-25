@@ -1,4 +1,6 @@
-﻿namespace AuthSystem.Models
+﻿using PFA.Models;
+
+namespace AuthSystem.Models
 {
     public class Endroit
     {
@@ -13,5 +15,7 @@
 
         public Ville? ville { get; set; }
         public int VilleId { get; set; }
+
+        public ICollection<Visit>? Visits { get; set; }
     }
 }

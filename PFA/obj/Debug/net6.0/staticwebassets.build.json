@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "crMA4MIP0LoY/k1DPFQAjepFUAU5nsg5u5eZm4DsocI=",
+  "Hash": "7mPvjqgCdn2HzxehPEFW7uUVxR86URCit8Xn0MgNuIU=",
   "Source": "PFA",
   "BasePath": "_content/PFA",
   "Mode": "Default",
@@ -21811,6 +21811,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\0054fb4c-ac8c-499e-beb0-3bcff9a08131.jpg",
+      "SourceId": "PFA",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\",
+      "BasePath": "_content/PFA",
+      "RelativePath": "ProfilImage/0054fb4c-ac8c-499e-beb0-3bcff9a08131.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfilImage\\0054fb4c-ac8c-499e-beb0-3bcff9a08131.jpg"
+    },
+    {
       "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\0215ce9b-b91f-4147-9877-1c717088667e.jpeg",
       "SourceId": "PFA",
       "SourceType": "Discovered",
@@ -21930,6 +21947,23 @@
       "OriginalItemSpec": "wwwroot\\ProfilImage\\1da0ed75-cf0e-489b-94e1-d8cdf8158fd8.jpeg"
     },
     {
+      "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\245a0c36-f2ab-46db-8927-18809deaf3e4.jpeg",
+      "SourceId": "PFA",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\",
+      "BasePath": "_content/PFA",
+      "RelativePath": "ProfilImage/245a0c36-f2ab-46db-8927-18809deaf3e4.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfilImage\\245a0c36-f2ab-46db-8927-18809deaf3e4.jpeg"
+    },
+    {
       "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\407341de-57e3-42b7-81bb-3fea119ad510.jpeg",
       "SourceId": "PFA",
       "SourceType": "Discovered",
@@ -21962,6 +21996,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfilImage\\433524c9-64fe-4404-9215-20b814bfeb9a.jpeg"
+    },
+    {
+      "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\5c8d90e2-9f70-4d24-97bc-1c62277a6789.jpg",
+      "SourceId": "PFA",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\",
+      "BasePath": "_content/PFA",
+      "RelativePath": "ProfilImage/5c8d90e2-9f70-4d24-97bc-1c62277a6789.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfilImage\\5c8d90e2-9f70-4d24-97bc-1c62277a6789.jpg"
     },
     {
       "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\6f3000a0-eaba-4e80-bed5-3c16c75a83d6.jpg",
@@ -22015,6 +22066,23 @@
       "OriginalItemSpec": "wwwroot\\ProfilImage\\8c1f7970-3869-456f-82ac-0a5896d777f0.jpeg"
     },
     {
+      "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\937ea9e0-6e2d-4cf5-a877-f39eb3a6da78.jpg",
+      "SourceId": "PFA",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\",
+      "BasePath": "_content/PFA",
+      "RelativePath": "ProfilImage/937ea9e0-6e2d-4cf5-a877-f39eb3a6da78.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfilImage\\937ea9e0-6e2d-4cf5-a877-f39eb3a6da78.jpg"
+    },
+    {
       "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\a1c29dc2-1d82-4e3a-a4bf-f5102f8b369e.jpeg",
       "SourceId": "PFA",
       "SourceType": "Discovered",
@@ -22047,6 +22115,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfilImage\\a213803c-69d1-4296-8c33-c42586a6e0c3.jpeg"
+    },
+    {
+      "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\a7c8f5ec-0a2f-4159-852f-b1ec44582aeb.jpeg",
+      "SourceId": "PFA",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\",
+      "BasePath": "_content/PFA",
+      "RelativePath": "ProfilImage/a7c8f5ec-0a2f-4159-852f-b1ec44582aeb.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfilImage\\a7c8f5ec-0a2f-4159-852f-b1ec44582aeb.jpeg"
+    },
+    {
+      "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\b5bfc308-06d5-4577-916d-29765f8ab3f8.jpg",
+      "SourceId": "PFA",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\",
+      "BasePath": "_content/PFA",
+      "RelativePath": "ProfilImage/b5bfc308-06d5-4577-916d-29765f8ab3f8.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfilImage\\b5bfc308-06d5-4577-916d-29765f8ab3f8.jpg"
     },
     {
       "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\da357f80-6c04-4d1f-b581-8f83fbf78a80.jpeg",
@@ -22098,6 +22200,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\ProfilImage\\e96f0cf8-0bf2-42f9-ac7e-8048945f1218.jpeg"
+    },
+    {
+      "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\f26b1b01-8b69-4998-9fe8-8c9617bcef51.jpeg",
+      "SourceId": "PFA",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\",
+      "BasePath": "_content/PFA",
+      "RelativePath": "ProfilImage/f26b1b01-8b69-4998-9fe8-8c9617bcef51.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ProfilImage\\f26b1b01-8b69-4998-9fe8-8c9617bcef51.jpeg"
     },
     {
       "Identity": "D:\\Projet .NET 4eme annee\\PFA\\PFA\\wwwroot\\ProfilImage\\Oussama.jpeg",

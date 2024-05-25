@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewData["Title"] = "DemanderPlan";
+    Layout = "~/Views/Shared/_Client_Layout.cshtml";
+}
+
+<style>
+    .nav-link:hover {
+        background-color: green !important;
+        border-radius: 20px !important;
+        color: rgb(255, 255, 255) !important;
+    }
+
+    .navbar-light .navbar-brand {
+        color: black;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: black;
+    }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: green;
+        }
+</style>
+
+<div class="container-fluid">
+    <div class="row column_title">
+        <div class="col-md-12">
+            <div class="page_title">
+                <h2>Demander Plan</h2>
+            </div>
+        </div>
+    </div>
+    <!-- row -->
+    <div class="row column1">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="white_shd full margin_bottom_30">
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- end row -->
+        <div class="container mt-1">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <!-- Barre de recherche -->
+                    <div class="input-group mb-4" style="display: flex; gap: 30px;">
+                        <input type="text" class="form-control" placeholder="Rechercher..." aria-label="Rechercher" aria-describedby="basic-addon2" style="border-radius: 50PX;">
+                        <span class="input-icon">
+
+                        </span>
+                        <div class="input-group-append">
+                            <button class="btn btn-success " type="button" style="border-radius: 50px;">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                Rechercher
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+
+            <nav class="navbar navbar-expand-lg navbar-light" style="display: flex; background-color: white;">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="navbar-nav" style="display: flex; width:50%; margin-right:100px auto;">
+                        <p class="nav-item" style="flex-grow: 1;">
+                            
+
+                            <ul>
+                                <a class="nav-link" href="#">Hôtel</a>
+                            @foreach (var e in ViewBag.listHotel)
+                            {
+                               
+                                    <li>@e.NomEndroit</li>
+                                
+                                 
+                            }
+                            </ul>
+                        </p>
+                        <p class="nav-item" style="flex-grow: 1;">
+                           
+                            <ul>
+                                <a class="nav-link" href="#">Restaurant</a>
+                            @foreach (var e in ViewBag.listRestarants)
+                            { 
+                               
+                                    <li>@e.NomEndroit</li>
+                                
+
+                                    }</ul>
+                        </p>
+                        <p class="nav-item" style="flex-grow: 1;">
+                            
+                           
+                            <ul>
+                                <a class="nav-link" href="#">Activités</a>
+                            @foreach (var e in ViewBag.listLieu)
+                            {
+                               
+                                
+                                    <li>@e.NomEndroit</li>
+                                
+                                 
+                            }
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+        </div>
+        </nav>

@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AuthSystem.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PFA.Context;
 using PFA.Filters;
 using PFA.Models;
 using PFA.ModelView;
+using PFA.Visite;
 using System.Diagnostics.Metrics;
 
 namespace PFA.Controllers
@@ -13,10 +16,34 @@ namespace PFA.Controllers
     { 
         private readonly IWebHostEnvironment _webHostEnvironment;
         MyContext db;
-        public ClientController(MyContext db, IWebHostEnvironment webHostEnvironment)
+        private readonly IVisitService _visitService;
+
+        
+
+        
+        public ClientController(MyContext db, IWebHostEnvironment webHostEnvironment, IVisitService visitService)
         {
             this.db = db;
             _webHostEnvironment = webHostEnvironment;
+            _visitService = visitService;
+        }
+
+        public async Task<IActionResult> AfficherStatistique()
+        {
+            var statistics = await _visitService.GetVisitStatistics();
+            var userInfo = await _visitService.GetUserInfo();
+
+            ViewData["UserPhotoPath"] = userInfo.PhotoPath;
+            ViewData["UserName"] = userInfo.user;
+
+            var model =new StatistiqueViewModel
+            {
+                VisitStatistics = statistics,
+                PhotoPath = userInfo.PhotoPath,
+                user=userInfo.user,
+            };
+            
+            return View(model);
         }
 
         public IActionResult Index()
@@ -109,12 +136,33 @@ namespace PFA.Controllers
                   
                      return RedirectToAction("Index");
                                 
-                }   
-            
-          
-            
-                } 
-             }
+                }
+
+        [HttpGet]
+        public IActionResult DemanderPlan()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DemanderPlan(string ville)
+        {
+            var listLieu=db.Endroits.OrderBy(item => item.Id).Take(5).ToList();
+            ViewBag.listLieu = listLieu;
+
+            var listHotel = db.Endroits.OrderBy(item => item.Id).Skip(5).Take(4).ToList();
+            ViewBag.listHotel = listHotel;
+
+            var listRestarants = db.Endroits.OrderBy(item => item.Id).Skip(9).Take(5).ToList();
+            ViewBag.listRestarants = listRestarants;
+         
+            return View();
+        }
+
+
+
+    } 
+}
         
     
 

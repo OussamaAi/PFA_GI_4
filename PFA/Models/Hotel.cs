@@ -1,4 +1,6 @@
-﻿namespace AuthSystem.Models
+﻿using PFA.Models;
+
+namespace AuthSystem.Models
 {
     public class Hotel:Endroit
     {

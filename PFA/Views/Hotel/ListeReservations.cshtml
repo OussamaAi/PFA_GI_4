@@ -1,0 +1,45 @@
+﻿@model PFA.ModelView.ListerChambresReserverViewModel
+
+@{
+    ViewData["Title"] = "Liste des réservations";
+    Layout = "~/Views/Shared/_Client_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2>Liste des réservations</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>État</th>
+                <th>Tables réservées</th>
+                <th>Restaurant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model.reservations)
+            {
+                <tr>
+                    <td>@reservation.Date</td>
+                    <td>@reservation.Etat</td>
+                    <td>
+                        @foreach (var chambre in reservation.chambres)
+                        {
+                            <span>@chambre.Numero</span>
+                        }
+                    </td>
+                    <td>@reservation.chambres.FirstOrDefault()?.hotel.NomEndroit</td>
+                    <td>
+                        <a asp-controller="Hotel" asp-action="EditerReservation" asp-route-id="@reservation.Id" class="btn btn-warning">Modifier</a>
+                        <form asp-controller="Hotel" asp-action="SupprimerReservation" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@reservation.Id" />
+                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

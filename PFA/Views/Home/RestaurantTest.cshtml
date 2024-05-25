@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PFA.ModelView.ListerRestaurantModelView>
+
+
+
+<div class="container mt-5">
+    <h1>@ViewData["Title"]</h1>
+
+    <form method="get" action="@Url.Action("RestaurantTest", "Home")" class="mb-5">
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="filter" id="mieuxNotes" value="mieuxNotes">
+                <label class="form-check-label" for="mieuxNotes">
+                    Mieux notés (4-5 étoiles)
+                </label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Filtrer</button>
+    </form>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-60">
+                    <img src="~/EndroitImage/Restaurant/@item.Image" class="card-img-top" alt="Restaurant Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.NomEndroit</h5>
+                        <p class="card-text">@item.TypeCuisine</p>
+                        <div>
+                            @{
+                                int fullStars = (int)item.NbrEtoile;
+                                bool hasHalfStar = (item.NbrEtoile - fullStars) >= 0.5;
+                            }
+
+                            @for (int i = 0; i < fullStars; i++)
+                            {
+                                <i class="fas fa-star text-warning"></i>
+                            }
+
+                            @if (hasHalfStar)
+                            {
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            }
+
+                            @for (int i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++)
+                            {
+                                <i class="far fa-star text-warning"></i>
+                            }
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <i class="fas fa-map-marker-alt"></i> @item.Addresse
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-phone"></i> @item.Telephone
+                        </li>
+                    </ul>
+                    <div class="card-body text-center">
+                        <a href="@Url.Action("Reserver", "Restaurant", new { id = item.Id })" class="btn btn-primary">Réserver</a>
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="@Url.Action("Details", "Restaurant", new { id = item.Id })" class="btn btn-secondary">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

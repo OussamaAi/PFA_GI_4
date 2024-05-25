@@ -51,42 +51,6 @@ namespace PFA.Migrations
                     b.ToTable("Avis");
                 });
 
-            modelBuilder.Entity("AuthSystem.Models.Chambre", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<bool>("Disponibilité")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("HotelId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Numero")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Prix")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReservationId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("HotelId");
-
-                    b.HasIndex("ReservationId");
-
-                    b.ToTable("Chambres");
-                });
-
             modelBuilder.Entity("AuthSystem.Models.Contact", b =>
                 {
                     b.Property<int>("ContactId")
@@ -174,18 +138,28 @@ namespace PFA.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("CVV")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateExpiration")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("DatePaiment")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsPaid")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Montant")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReservationId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TypePaiment")
+                    b.Property<string>("NumeroDeCarte")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ReservationId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -202,9 +176,6 @@ namespace PFA.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
@@ -212,12 +183,12 @@ namespace PFA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("userId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("userId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Reservations");
                 });
@@ -236,10 +207,10 @@ namespace PFA.Migrations
                     b.Property<int>("Numéro")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReservationId")
+                    b.Property<int?>("ReservationId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("RestaurantId")
+                    b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
                     b.Property<bool>("libre")
@@ -251,7 +222,7 @@ namespace PFA.Migrations
 
                     b.HasIndex("RestaurantId");
 
-                    b.ToTable("Table");
+                    b.ToTable("Tables");
                 });
 
             modelBuilder.Entity("AuthSystem.Models.Ville", b =>
@@ -268,7 +239,43 @@ namespace PFA.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ville");
+                    b.ToTable("Villes");
+                });
+
+            modelBuilder.Entity("PFA.Models.Chambre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<bool>("Disponibilité")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Prix")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ReservationId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("ReservationId");
+
+                    b.ToTable("Chambress");
                 });
 
             modelBuilder.Entity("PFA.Models.User", b =>
@@ -314,6 +321,32 @@ namespace PFA.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("PFA.Models.Visit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EndroitId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("VisitDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("EndroitId");
+
+                    b.ToTable("Visits");
+                });
+
             modelBuilder.Entity("AuthSystem.Models.Hotel", b =>
                 {
                     b.HasBaseType("AuthSystem.Models.Endroit");
@@ -356,25 +389,6 @@ namespace PFA.Migrations
                     b.Navigation("user");
                 });
 
-            modelBuilder.Entity("AuthSystem.Models.Chambre", b =>
-                {
-                    b.HasOne("AuthSystem.Models.Hotel", "hotel")
-                        .WithMany("Chambres")
-                        .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AuthSystem.Models.Reservation", "reservation")
-                        .WithMany("chambres")
-                        .HasForeignKey("ReservationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("hotel");
-
-                    b.Navigation("reservation");
-                });
-
             modelBuilder.Entity("AuthSystem.Models.Contact", b =>
                 {
                     b.HasOne("PFA.Models.User", "user")
@@ -412,7 +426,7 @@ namespace PFA.Migrations
                 {
                     b.HasOne("PFA.Models.User", "user")
                         .WithMany("Reservations")
-                        .HasForeignKey("userId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -424,14 +438,59 @@ namespace PFA.Migrations
                     b.HasOne("AuthSystem.Models.Reservation", "Reservation")
                         .WithMany("tables")
                         .HasForeignKey("ReservationId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("AuthSystem.Models.Restaurant", "Restaurant")
+                        .WithMany("Tables")
+                        .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AuthSystem.Models.Restaurant", null)
-                        .WithMany("Tables")
-                        .HasForeignKey("RestaurantId");
-
                     b.Navigation("Reservation");
+
+                    b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("PFA.Models.Chambre", b =>
+                {
+                    b.HasOne("AuthSystem.Models.Hotel", "hotel")
+                        .WithMany("Chambres")
+                        .HasForeignKey("HotelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AuthSystem.Models.Reservation", "reservation")
+                        .WithMany("chambres")
+                        .HasForeignKey("ReservationId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.Navigation("hotel");
+
+                    b.Navigation("reservation");
+                });
+
+            modelBuilder.Entity("PFA.Models.Visit", b =>
+                {
+                    b.HasOne("PFA.Models.User", "User")
+                        .WithMany("Visits")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AuthSystem.Models.Endroit", "Endroit")
+                        .WithMany("Visits")
+                        .HasForeignKey("EndroitId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Endroit");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("AuthSystem.Models.Endroit", b =>
+                {
+                    b.Navigation("Visits");
                 });
 
             modelBuilder.Entity("AuthSystem.Models.Reservation", b =>
@@ -455,6 +514,8 @@ namespace PFA.Migrations
                     b.Navigation("Contacts");
 
                     b.Navigation("Reservations");
+
+                    b.Navigation("Visits");
                 });
 
             modelBuilder.Entity("AuthSystem.Models.Hotel", b =>

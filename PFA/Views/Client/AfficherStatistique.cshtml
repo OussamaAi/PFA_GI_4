@@ -1,0 +1,103 @@
+﻿@model PFA.ModelView.StatistiqueViewModel
+@using Newtonsoft.Json;
+
+@{
+    ViewData["Title"] = "Afficher Statistiques";
+    Layout = "~/Views/Shared/_Client_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Afficher Statistiques</h1>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-sm" style="height: 100%;">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Endroits les plus visités</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Nom de l'Endroit</th>
+                                <th>Nombre de Visites</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.VisitStatistics)
+                            {
+                                <tr>
+                                    <td>@item.NomEndroit</td>
+                                    <td>@item.VisitCount</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4" style="margin-right: 15px;">
+            <div class="card shadow-sm" style="height: 100%;">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Graphique des visites</h4>
+                </div>
+                <div class="card-body">
+                    <canvas id="visitChart" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var chartData = @Html.Raw(JsonConvert.SerializeObject(Model.VisitStatistics));
+
+            var ctx = document.getElementById('visitChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: chartData.map(item => item.NomEndroit),
+                    datasets: [{
+                        label: 'Nombre de visites',
+                        data: chartData.map(item => item.VisitCount),
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    return tooltipItem.label + ': ' + tooltipItem.raw;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+}

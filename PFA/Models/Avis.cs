@@ -10,6 +10,6 @@ namespace AuthSystem.Models
         public DateTime Date { get; set; }
 
         public User? user { get; set; }
-        public int? ClientId;
+        public int? UserId;
     }
 }
